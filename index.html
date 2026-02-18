@@ -24,8 +24,8 @@
 
         /* Islamic Geometric Pattern Background */
         .islamic-pattern {
-            background-color: #0ea5e9;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .gradient-bg {
@@ -33,9 +33,9 @@
         }
         
         .card-modern {
-            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,253,250,0.95) 100%);
-            border: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 8px 32px rgba(14,165,233,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(14, 165, 233, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
         }
@@ -46,9 +46,9 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 60px;
-            height: 60px;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 0v50C72.386 50 50 72.386 50 100H0V0h100z' fill='%230ea5e9' fill-opacity='0.05'/%3E%3C/svg%3E");
+            width: 80px;
+            height: 80px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 0v50C72.386 50 50 72.386 50 100H0V0h100z' fill='%230ea5e9' fill-opacity='0.03'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             pointer-events: none;
         }
@@ -56,17 +56,17 @@
         .card-highlight {
             background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
             color: white;
-            box-shadow: 0 10px 40px rgba(6,182,212,0.3);
+            box-shadow: 0 10px 20px -5px rgba(6,182,212,0.4);
             position: relative;
+            overflow: hidden;
         }
 
-        .card-highlight::after {
-            content: "✦";
+        /* Pattern untuk card highlight */
+        .card-highlight::before {
+            content: "";
             position: absolute;
-            top: 5px;
-            right: 10px;
-            font-size: 20px;
-            opacity: 0.3;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h2v2H1V1zm4 0h2v2H5V1zm4 0h2v2H9V1z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E");
         }
         
         .btn-primary {
@@ -94,10 +94,10 @@
         }
         
         .nav-modern {
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.03);
         }
         
         .nav-item-modern {
@@ -105,12 +105,17 @@
         }
         
         .nav-item-modern.active {
-            background: #e0f2fe;
             color: #0ea5e9;
+            font-weight: 600;
+        }
+        
+        .nav-item-modern.active .icon-container {
+            background-color: #e0f2fe;
+            color: #0284c7;
         }
         
         .stat-card {
-            background: linear-gradient(135deg, rgba(6,182,212,0.1) 0%, rgba(20,184,166,0.1) 100%);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             border-left: 4px solid #0ea5e9;
         }
         
@@ -142,12 +147,12 @@
         }
         
         .note-badge {
-            background: linear-gradient(135deg, rgba(6,182,212,0.15) 0%, rgba(20,184,166,0.15) 100%);
+            background: #f0f9ff;
             border-left: 3px solid #0ea5e9;
             padding: 8px 12px;
             border-radius: 8px;
             font-size: 12px;
-            color: #0c5460;
+            color: #0369a1;
             margin-top: 8px;
         }
         
@@ -169,26 +174,46 @@
             scrollbar-width: none;
         }
 
-        /* Tab Divider */
-        .tab-divider {
-            border-top: 2px solid #e5e7eb;
-            margin: 1rem 0;
-            position: relative;
+        /* Tab Divider Ornamen */
+        .ornament-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0;
+            color: #cbd5e1;
         }
-        .tab-divider::after {
-            content: "۞";
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #f9fafb;
-            padding: 0 10px;
-            color: #0ea5e9;
+        .ornament-divider::before, .ornament-divider::after {
+            content: "";
+            height: 1px;
+            background-color: #cbd5e1;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .ornament-divider span {
             font-size: 18px;
+            color: #0ea5e9;
+        }
+
+        /* Header Ornamen Bawah */
+        .header-curve {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        .header-curve svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 20px;
+            fill: #f8fafc;
         }
     </style>
 </head>
-<body class="h-full bg-gray-50 text-gray-800 overflow-hidden">
+<body class="h-full bg-slate-50 text-gray-800 overflow-hidden islamic-pattern">
     <div id="root" class="h-full"></div>
 
     <script type="text/babel">
@@ -305,9 +330,9 @@
             return (
                 <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
                     <div className="card-modern rounded-2xl p-6 w-full max-w-sm shadow-2xl" onClick={e => e.stopPropagation()}>
-                        <h3 className="text-lg font-bold text-blue-600 mb-4 text-center">{title}</h3>
-                        <div className="max-h-[70vh] overflow-y-auto no-scrollbar">{children}</div>
-                        <div className="flex gap-3 mt-4">{actions}</div>
+                        <h3 className="text-lg font-bold text-blue-600 mb-4 text-center border-b pb-2">{title}</h3>
+                        <div className="max-h-[70vh] overflow-y-auto no-scrollbar pt-2">{children}</div>
+                        <div className="flex gap-3 mt-6 pt-2 border-t">{actions}</div>
                     </div>
                 </div>
             );
@@ -458,39 +483,46 @@
             const progressPercent = (completedCount / checklistConfig.length) * 100;
 
             const renderToday = () => (
-                <div className="pb-24 animate-fade-in">
-                    <div className="mb-4">
+                <div className="pb-24 animate-fade-in px-1">
+                    <div className="mb-6 card-modern p-4 rounded-xl">
                         <div className="flex items-center justify-between mb-3">
-                            <h2 className="text-lg font-bold text-gray-800">Ramadhan ke-{currentDay}</h2>
-                            <div className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
-                                {completedCount}/{checklistConfig.length}
+                            <div>
+                                <h2 className="text-xl font-bold text-gray-800">Ramadhan ke-{currentDay}</h2>
+                                <span className="text-xs text-gray-500">Tetap Istiqomah!</span>
+                            </div>
+                            <div className="text-right">
+                                <div className="text-2xl font-bold text-blue-600">{completedCount}/{checklistConfig.length}</div>
+                                <div className="text-[10px] text-gray-400 uppercase tracking-wider">Selesai</div>
                             </div>
                         </div>
-                        <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                             <div className="h-full bg-gradient-to-r from-blue-500 to-teal-500 rounded-full transition-all duration-500" style={{ width: `${progressPercent}%` }}></div>
                         </div>
                     </div>
+
+                    <div className="ornament-divider"><span>۞</span></div>
+
                     <div className="space-y-3">
                         {checklistConfig.map((item, idx) => {
                             const note = todayData[`${item.id}_note`];
                             return (
                                 <div key={item.id} className="card-modern rounded-xl p-4 slide-up" style={{ animationDelay: `${idx * 0.08}s` }}>
-                                    <label className="flex items-center gap-3 cursor-pointer">
-                                        <input type="checkbox" checked={!!todayData[item.id]} onChange={() => handleCheck(item.id)} />
+                                    <label className="flex items-start gap-4 cursor-pointer">
+                                        <div className="pt-1">
+                                            <input type="checkbox" checked={!!todayData[item.id]} onChange={() => handleCheck(item.id)} />
+                                        </div>
                                         <div className="flex-1 min-w-0">
-                                            <div className="flex items-center gap-2">
-                                                <div className="text-2xl">{item.icon}</div>
-                                                <div>
-                                                    <div className="font-semibold text-gray-800">{item.label}</div>
-                                                    <div className="text-xs text-gray-500 truncate">{item.desc}</div>
-                                                </div>
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <span className="text-xl">{item.icon}</span>
+                                                <span className="font-semibold text-gray-800 text-lg">{item.label}</span>
                                             </div>
+                                            <div className="text-sm text-gray-500 leading-relaxed">{item.desc}</div>
                                             {note && <div className="note-badge">📝 {note}</div>}
                                         </div>
                                     </label>
                                     {item.hasNote && (
-                                        <button onClick={() => openNoteModal(item)} className="mt-3 w-full py-2 px-3 text-xs rounded-lg bg-blue-100 text-blue-600 hover:bg-blue-200 transition-all font-medium">
-                                            ✏️ {note ? 'Ubah' : 'Tambah'} Catatan
+                                        <button onClick={() => openNoteModal(item)} className="mt-4 w-full py-2.5 px-3 text-sm rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all font-medium border border-blue-100 flex items-center justify-center gap-2">
+                                            ✏️ <span>{note ? 'Ubah Catatan' : 'Tambah Catatan'}</span>
                                         </button>
                                     )}
                                 </div>
@@ -501,9 +533,9 @@
             );
 
             const renderCalendar = () => (
-                <div className="pb-24 animate-fade-in">
-                    <h2 className="text-lg font-bold text-gray-800 mb-4">Progres 30 Hari Ramadhan</h2>
-                    <div className="grid grid-cols-6 gap-2">
+                <div className="pb-24 animate-fade-in px-1">
+                    <h2 className="text-xl font-bold text-gray-800 mb-4 px-2">Progres Ramadhan</h2>
+                    <div className="grid grid-cols-5 gap-3">
                         {tabalong_schedule.map((sch, idx) => {
                             const day = idx + 1;
                             const dateObj = new Date(RAMADHAN_START);
@@ -514,15 +546,32 @@
                             const isToday = day === currentDay;
                             const isFull = completed === checklistConfig.length;
                             const hasActivity = completed > 0;
-                            let bgClass = 'bg-gray-50 border-2 border-gray-200';
-                            if (isToday) bgClass = 'bg-gradient-to-br from-blue-100 to-teal-100 border-2 border-blue-400 shadow-md';
-                            else if (isFull) bgClass = 'bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-400';
-                            else if (hasActivity) bgClass = 'bg-blue-50 border-2 border-blue-200';
+                            
+                            let bgClass = 'bg-white border-2 border-gray-100';
+                            let textClass = 'text-gray-600';
+                            
+                            if (isToday) {
+                                bgClass = 'bg-blue-50 border-2 border-blue-500 shadow-md ring-2 ring-blue-100';
+                                textClass = 'text-blue-700';
+                            } else if (isFull) {
+                                bgClass = 'bg-emerald-50 border-2 border-emerald-400';
+                                textClass = 'text-emerald-700';
+                            } else if (hasActivity) {
+                                bgClass = 'bg-sky-50 border-2 border-sky-200';
+                                textClass = 'text-sky-700';
+                            }
+                            
                             return (
-                                <div key={day} className={`rounded-lg p-2 text-center ${bgClass} transition-all`}>
-                                    <div className="text-[10px] font-medium text-gray-500">Hari</div>
-                                    <div className={`text-lg font-bold ${isToday ? 'text-blue-600' : 'text-gray-800'}`}>{day}</div>
-                                    <div className={`text-[10px] font-bold ${isFull ? 'text-green-600' : 'text-gray-400'}`}>{completed}/{checklistConfig.length}</div>
+                                <div key={day} className={`rounded-xl p-2 text-center ${bgClass} transition-all flex flex-col justify-center min-h-[70px]`}>
+                                    <div className="text-[10px] uppercase font-bold text-gray-400 mb-1">Hari</div>
+                                    <div className={`text-xl font-bold ${textClass} mb-1`}>{day}</div>
+                                    {completed > 0 && (
+                                        <div className="flex justify-center">
+                                            <span className={`text-[10px] px-1.5 rounded-full font-bold ${isFull ? 'bg-emerald-100 text-emerald-600' : 'bg-gray-100 text-gray-500'}`}>
+                                                {completed}/{checklistConfig.length}
+                                            </span>
+                                        </div>
+                                    )}
                                 </div>
                             );
                         })}
@@ -531,102 +580,118 @@
             );
 
             const renderCalculator = () => (
-                <div className="pb-24 animate-fade-in">
-                    <h2 className="text-lg font-bold text-gray-800 mb-4">Kalkulator & Target</h2>
+                <div className="pb-24 animate-fade-in px-1">
+                    <h2 className="text-xl font-bold text-gray-800 mb-4 px-2">Kalkulator & Target</h2>
                     
                     {/* Zakat & Fidyah Section */}
                     <div className="card-modern rounded-2xl p-6 mb-6">
-                        <h3 className="text-center font-bold text-gray-800 mb-4 flex items-center justify-center gap-2">
+                        <h3 className="text-center font-bold text-gray-800 mb-4 flex items-center justify-center gap-2 text-lg">
                             <span>💰</span> Hitung Kewajiban
                         </h3>
                         
-                        <div className="flex bg-gray-100 p-1 rounded-lg mb-4">
+                        <div className="flex bg-gray-100 p-1 rounded-xl mb-6">
                             {['fitrah', 'maal', 'fidyah'].map(type => (
                                 <button 
                                     key={type}
                                     onClick={() => setZakatType(type)}
-                                    className={`flex-1 py-2 text-xs font-semibold rounded-md transition-all ${zakatType === type ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500'}`}>
+                                    className={`flex-1 py-2.5 text-xs font-bold rounded-lg transition-all ${zakatType === type ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}>
                                     {type === 'fitrah' ? 'Z. Fitrah' : type === 'maal' ? 'Z. Maal' : 'Fidyah'}
                                 </button>
                             ))}
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="space-y-5">
                             {zakatType === 'fitrah' && (
                                 <>
                                     <div>
-                                        <label className="text-xs font-semibold text-gray-500 block mb-1">Jumlah Orang</label>
-                                        <input type="number" min="1" value={zakatForm.people} onChange={e => setZakatForm({...zakatForm, people: parseInt(e.target.value) || 0})} className="w-full border rounded-lg p-2 bg-white/50 focus:border-blue-500 focus:outline-none"/>
+                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wide block mb-2">Jumlah Orang</label>
+                                        <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
+                                            <span className="text-xl mr-2">👥</span>
+                                            <input type="number" min="1" value={zakatForm.people} onChange={e => setZakatForm({...zakatForm, people: parseInt(e.target.value) || 0})} className="w-full bg-transparent focus:outline-none text-lg font-semibold text-gray-700"/>
+                                        </div>
                                     </div>
                                     <div>
-                                        <label className="text-xs font-semibold text-gray-500 block mb-1">Harga Beras (per jiwa/2.5kg)</label>
-                                        <input type="number" value={zakatForm.price} onChange={e => setZakatForm({...zakatForm, price: parseInt(e.target.value) || 0})} className="w-full border rounded-lg p-2 bg-white/50 focus:border-blue-500 focus:outline-none"/>
+                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wide block mb-2">Harga Beras (2.5kg)</label>
+                                        <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
+                                            <span className="text-sm font-bold text-gray-400 mr-2">Rp</span>
+                                            <input type="number" value={zakatForm.price} onChange={e => setZakatForm({...zakatForm, price: parseInt(e.target.value) || 0})} className="w-full bg-transparent focus:outline-none text-lg font-semibold text-gray-700"/>
+                                        </div>
                                     </div>
                                 </>
                             )}
 
                             {zakatType === 'maal' && (
                                 <div>
-                                    <label className="text-xs font-semibold text-gray-500 block mb-1">Total Nilai Harta (Emas/Tabungan/Saham)</label>
-                                    <input type="number" value={zakatForm.assets} onChange={e => setZakatForm({...zakatForm, assets: parseInt(e.target.value) || 0})} className="w-full border rounded-lg p-2 bg-white/50 focus:border-blue-500 focus:outline-none" placeholder="Masukkan total Rupiah"/>
-                                    <p className="text-[10px] text-gray-400 mt-1">*Pastikan harta sudah mencapai Nishab (setara 85gr emas)</p>
+                                    <label className="text-xs font-bold text-gray-500 uppercase tracking-wide block mb-2">Total Nilai Harta</label>
+                                    <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
+                                        <span className="text-sm font-bold text-gray-400 mr-2">Rp</span>
+                                        <input type="number" value={zakatForm.assets} onChange={e => setZakatForm({...zakatForm, assets: parseInt(e.target.value) || 0})} className="w-full bg-transparent focus:outline-none text-lg font-semibold text-gray-700" placeholder="0"/>
+                                    </div>
+                                    <p className="text-xs text-blue-500 mt-2 bg-blue-50 p-2 rounded-lg">*Pastikan harta sudah mencapai Nishab (setara 85gr emas)</p>
                                 </div>
                             )}
 
                             {zakatType === 'fidyah' && (
                                 <>
                                     <div>
-                                        <label className="text-xs font-semibold text-gray-500 block mb-1">Jumlah Hari Tidak Puasa</label>
-                                        <input type="number" min="1" value={zakatForm.days} onChange={e => setZakatForm({...zakatForm, days: parseInt(e.target.value) || 0})} className="w-full border rounded-lg p-2 bg-white/50 focus:border-blue-500 focus:outline-none"/>
+                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wide block mb-2">Hari Tidak Puasa</label>
+                                        <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
+                                            <span className="text-xl mr-2">🗓️</span>
+                                            <input type="number" min="1" value={zakatForm.days} onChange={e => setZakatForm({...zakatForm, days: parseInt(e.target.value) || 0})} className="w-full bg-transparent focus:outline-none text-lg font-semibold text-gray-700"/>
+                                        </div>
                                     </div>
                                     <div>
-                                        <label className="text-xs font-semibold text-gray-500 block mb-1">Harga 1x Makan (Lengkap)</label>
-                                        <input type="number" value={zakatForm.price} onChange={e => setZakatForm({...zakatForm, price: parseInt(e.target.value) || 0})} className="w-full border rounded-lg p-2 bg-white/50 focus:border-blue-500 focus:outline-none"/>
+                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wide block mb-2">Biaya 1x Makan</label>
+                                        <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
+                                            <span className="text-sm font-bold text-gray-400 mr-2">Rp</span>
+                                            <input type="number" value={zakatForm.price} onChange={e => setZakatForm({...zakatForm, price: parseInt(e.target.value) || 0})} className="w-full bg-transparent focus:outline-none text-lg font-semibold text-gray-700"/>
+                                        </div>
                                     </div>
                                 </>
                             )}
 
-                            <div className="bg-blue-50 p-4 rounded-xl border border-blue-200 text-center mt-4">
-                                <div className="text-xs text-blue-600 font-semibold mb-1">Total Kewajiban</div>
-                                <div className="text-2xl font-bold text-blue-800">{formatRupiah(zakatResult)}</div>
+                            <div className="bg-gradient-to-r from-blue-500 to-teal-500 p-5 rounded-xl text-center mt-6 text-white shadow-lg">
+                                <div className="text-xs font-bold opacity-80 uppercase tracking-widest mb-1">Total Kewajiban</div>
+                                <div className="text-3xl font-bold">{formatRupiah(zakatResult)}</div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="tab-divider"></div>
+                    <div className="ornament-divider"><span>۞</span></div>
 
                     {/* Tilawah Generator Section */}
                     <div className="card-modern rounded-2xl p-6">
-                        <h3 className="text-center font-bold text-gray-800 mb-4 flex items-center justify-center gap-2">
+                        <h3 className="text-center font-bold text-gray-800 mb-6 flex items-center justify-center gap-2 text-lg">
                             <span>📖</span> Target Khatam Quran
                         </h3>
                         
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="flex-1">
-                                <label className="text-xs font-semibold text-gray-500 block mb-1">Ingin Khatam</label>
-                                <select value={khatamTarget} onChange={e => setKhatamTarget(parseInt(e.target.value))} className="w-full border rounded-lg p-2 bg-white/50 focus:border-blue-500 focus:outline-none">
-                                    <option value="1">1 Kali</option>
-                                    <option value="2">2 Kali</option>
-                                    <option value="3">3 Kali</option>
-                                    <option value="4">4 Kali</option>
-                                    <option value="5">5 Kali</option>
-                                </select>
+                        <div className="bg-orange-50 p-4 rounded-xl border border-orange-100 mb-6">
+                            <label className="text-xs font-bold text-orange-600 block mb-2 uppercase">Ingin Khatam Berapa Kali?</label>
+                            <div className="flex gap-2">
+                                {[1, 2, 3].map(num => (
+                                    <button 
+                                        key={num}
+                                        onClick={() => setKhatamTarget(num)}
+                                        className={`flex-1 py-2 rounded-lg text-sm font-bold border ${khatamTarget === num ? 'bg-orange-500 border-orange-500 text-white' : 'bg-white border-orange-200 text-orange-600'}`}
+                                    >
+                                        {num}x
+                                    </button>
+                                ))}
                             </div>
-                            <div className="flex-none pt-4 text-sm font-bold text-gray-400">Dalam 30 Hari</div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-3">
-                            <div className="bg-green-50 p-3 rounded-xl border border-green-200 text-center">
-                                <div className="text-2xl font-bold text-green-700 mb-1">{tilawahResult.perDay}</div>
-                                <div className="text-xs text-green-600 font-medium">Halaman / Hari</div>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="bg-white p-4 rounded-xl border-2 border-gray-100 shadow-sm text-center">
+                                <div className="text-3xl font-bold text-gray-800 mb-1">{tilawahResult.perDay}</div>
+                                <div className="text-xs text-gray-500 font-bold uppercase">Halaman / Hari</div>
                             </div>
-                            <div className="bg-blue-50 p-3 rounded-xl border border-blue-200 text-center">
-                                <div className="text-2xl font-bold text-blue-700 mb-1">{tilawahResult.perPrayer}</div>
-                                <div className="text-xs text-blue-600 font-medium">Halaman / Shalat</div>
+                            <div className="bg-white p-4 rounded-xl border-2 border-gray-100 shadow-sm text-center">
+                                <div className="text-3xl font-bold text-blue-600 mb-1">{tilawahResult.perPrayer}</div>
+                                <div className="text-xs text-blue-500 font-bold uppercase">Halaman / Shalat</div>
                             </div>
                         </div>
-                        <div className="mt-4 text-center">
-                             <p className="text-[10px] text-gray-500 italic">"Sedikit demi sedikit, lama-lama menjadi bukit. Istiqomah kuncinya."</p>
+                        <div className="mt-6 text-center bg-gray-50 p-3 rounded-lg border border-gray-100">
+                             <p className="text-xs text-gray-500 italic font-medium">"Bacalah Al-Quran, karena ia akan datang pada hari kiamat sebagai pemberi syafaat bagi pembacanya." (HR. Muslim)</p>
                         </div>
                     </div>
                 </div>
@@ -640,22 +705,23 @@
                     return { ...item, count, percentage };
                 });
                 return (
-                    <div className="pb-24 animate-fade-in">
-                        <h2 className="text-lg font-bold text-gray-800 mb-4">Statistik & Pencapaian</h2>
+                    <div className="pb-24 animate-fade-in px-1">
+                        <h2 className="text-xl font-bold text-gray-800 mb-4 px-2">Statistik Ibadah</h2>
                         <div className="card-modern rounded-2xl p-6 mb-6">
-                            <h3 className="text-center font-bold text-gray-800 mb-6">📊 Progres Ibadah</h3>
-                            <div className="space-y-4">
+                            <h3 className="text-center font-bold text-gray-800 mb-6 flex items-center justify-center gap-2">
+                                📊 Grafik Progres
+                            </h3>
+                            <div className="space-y-5">
                                 {stats.map(stat => (
-                                    <div key={stat.id} className="stat-card rounded-lg p-4">
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <div className="text-2xl">{stat.icon}</div>
-                                            <div className="flex-1">
-                                                <div className="font-semibold text-gray-800">{stat.label}</div>
-                                                <div className="text-xs text-gray-500">{stat.count}/{TOTAL_DAYS} hari</div>
+                                    <div key={stat.id}>
+                                        <div className="flex items-center justify-between mb-2">
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-lg">{stat.icon}</span>
+                                                <span className="text-sm font-bold text-gray-700">{stat.label}</span>
                                             </div>
-                                            <div className="text-lg font-bold text-blue-600">{stat.percentage}%</div>
+                                            <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-md">{stat.percentage}%</span>
                                         </div>
-                                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div className="h-2.5 bg-gray-100 rounded-full overflow-hidden">
                                             <div className="h-full bg-gradient-to-r from-blue-500 to-teal-500 rounded-full" style={{ width: `${stat.percentage}%` }}></div>
                                         </div>
                                     </div>
@@ -663,16 +729,16 @@
                             </div>
                         </div>
                         <div className="card-modern rounded-2xl p-6">
-                            <h3 className="text-center font-bold text-gray-800 mb-4">🏅 Pencapaian</h3>
+                            <h3 className="text-center font-bold text-gray-800 mb-6">🏅 Penghargaan</h3>
                             <div className="grid grid-cols-2 gap-3">
                                 {achievementsList.map(ach => {
                                     const stat = stats.find(s => s.id === ach.type);
                                     const unlocked = stat ? stat.count >= ach.target : false;
                                     return (
-                                        <div key={ach.id} className={`p-4 rounded-lg text-center border-2 transition-all ${unlocked ? 'bg-gradient-to-br from-amber-100 to-orange-100 border-amber-400' : 'bg-gray-100 border-gray-300'}`}>
-                                            <div className={`text-3xl mb-2 ${!unlocked && 'grayscale opacity-40'}`}>{ach.icon}</div>
-                                            <div className={`text-sm font-bold ${unlocked ? 'text-amber-800' : 'text-gray-600'}`}>{ach.label}</div>
-                                            <div className={`text-xs ${unlocked ? 'text-amber-700' : 'text-gray-500'}`}>{ach.desc}</div>
+                                        <div key={ach.id} className={`p-4 rounded-xl text-center border-2 transition-all ${unlocked ? 'bg-amber-50 border-amber-300 shadow-sm' : 'bg-gray-50 border-gray-100 opacity-60'}`}>
+                                            <div className={`text-4xl mb-3 transform transition-transform ${unlocked ? 'scale-110 drop-shadow-md' : 'grayscale'}`}>{ach.icon}</div>
+                                            <div className={`text-sm font-bold ${unlocked ? 'text-amber-800' : 'text-gray-500'}`}>{ach.label}</div>
+                                            <div className={`text-[10px] mt-1 ${unlocked ? 'text-amber-600' : 'text-gray-400'}`}>{ach.desc}</div>
                                         </div>
                                     )
                                 })}
@@ -683,100 +749,139 @@
             };
 
             return (
-                <div className="h-full flex flex-col overflow-hidden bg-gray-50 islamic-pattern">
+                <div className="h-full flex flex-col overflow-hidden bg-slate-50 islamic-pattern font-sans">
                     {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
 
-                    <header className="relative z-10 px-6 pt-6 pb-4 flex-shrink-0 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-b-3xl shadow-lg islamic-pattern">
+                    <header className="relative z-10 px-4 pt-6 pb-6 flex-shrink-0 bg-gradient-to-br from-blue-600 to-teal-600 text-white rounded-b-[2.5rem] shadow-xl overflow-hidden">
+                        <div className="header-curve"><svg viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path></svg></div>
                         <div className="text-center relative z-20">
-                            <div className="flex justify-center mb-3">
-                                <img src="https://i.ibb.co.com/WvTwLMn5/image-1.png" alt="Logo Kopkar AKM" className="h-16 object-contain bg-white/20 rounded-lg p-1 backdrop-blur-sm shadow-sm" onError={(e) => { e.target.style.display = 'none'; }} />
+                            <div className="flex justify-center mb-4">
+                                <div className="bg-white/20 p-2 rounded-2xl backdrop-blur-md shadow-inner">
+                                    <img src="https://i.ibb.co.com/WvTwLMn5/image-1.png" alt="Logo" className="h-14 object-contain" onError={(e) => { e.target.style.display = 'none'; }} />
+                                </div>
                             </div>
-                            <div className="arabic-font text-xl text-blue-100 mb-1">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-                            <h1 className="text-3xl font-bold text-white mb-1">Ramadhan Tracker</h1>
-                            <p className="text-blue-100 text-sm mb-2">Selamat Menjalankan Ibadah Puasa</p>
-                            <div className="text-xs text-blue-100 mb-2">📍 Tanjung Tabalong, Kalimantan Selatan</div>
-                            <div className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold">1447 H / 2026 M</div>
-                            <button onClick={() => setPrayerModalOpen(true)} className="mt-3 bg-white/20 hover:bg-white/30 text-white text-xs font-semibold py-1.5 px-4 rounded-full transition-all flex items-center gap-2 mx-auto">🤲 Kumpulan Doa</button>
+                            <div className="arabic-font text-2xl text-blue-100 mb-2 drop-shadow-md">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+                            <h1 className="text-3xl font-extrabold text-white mb-1 tracking-tight drop-shadow-sm">Ramadhan Tracker</h1>
+                            <p className="text-blue-100 text-sm font-medium mb-3">Selamat Menjalankan Ibadah Puasa</p>
+                            <div className="inline-flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm border border-white/10 mb-4">
+                                <span>📍</span> Tanjung Tabalong, Kalsel
+                            </div>
+                            
+                            <button onClick={() => setPrayerModalOpen(true)} className="w-full bg-white/10 hover:bg-white/20 active:scale-95 text-white text-sm font-bold py-3 px-4 rounded-xl transition-all flex items-center justify-center gap-2 border border-white/20 shadow-sm">
+                                <span>🤲</span> Kumpulan Doa Harian
+                            </button>
                         </div>
                     </header>
 
-                    <section className="px-6 py-4 flex-shrink-0">
-                        <div className="text-center mb-4">
-                            <div className="text-xs text-gray-500 uppercase tracking-widest mb-1">Waktu Sekarang</div>
-                            <div className="text-5xl font-bold text-blue-600 font-mono drop-shadow-sm">{currentTime.toLocaleTimeString('id-ID', { hour12: false })}</div>
-                            <div className="text-sm text-gray-600 mt-2">{currentTime.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</div>
-                        </div>
+                    <section className="px-4 py-6 flex-shrink-0 -mt-2 relative z-20">
                         <div className="grid grid-cols-2 gap-4">
-                            <div className="card-highlight rounded-2xl p-4 text-center">
-                                <div className="text-sm font-semibold opacity-90 mb-1">📅 Imsak</div>
-                                <div className="text-3xl font-bold font-mono mb-1">{todaySchedule.imsak}</div>
-                                <div className="text-xs opacity-80 mb-3">{formatCountdown(todaySchedule.imsak)}</div>
-                                <button onClick={() => { setAlarmType('imsak'); setAlarmModalOpen(true); }} className="w-full py-2 px-3 text-xs rounded-lg bg-white/25 hover:bg-white/35 transition-all font-medium">🔔 {alarms.imsak ? `${alarms.imsak}m sebelum` : 'Atur Alarm'}</button>
+                            <div className="card-highlight rounded-2xl p-4 text-center transform transition hover:-translate-y-1">
+                                <div className="text-xs font-bold text-blue-100 uppercase tracking-widest mb-1">Imsak</div>
+                                <div className="text-3xl font-bold font-mono text-white mb-1">{todaySchedule.imsak}</div>
+                                <div className="text-[10px] text-blue-100 bg-white/20 rounded-full px-2 py-0.5 inline-block mb-3">{formatCountdown(todaySchedule.imsak)}</div>
+                                <button onClick={() => { setAlarmType('imsak'); setAlarmModalOpen(true); }} className="w-full py-2 px-3 text-xs rounded-lg bg-white/20 hover:bg-white/30 text-white font-bold transition-all flex items-center justify-center gap-1">
+                                    🔔 {alarms.imsak ? 'Aktif' : 'Alarm'}
+                                </button>
                             </div>
-                            <div className="card-highlight rounded-2xl p-4 text-center">
-                                <div className="text-sm font-semibold opacity-90 mb-1">🍽️ Berbuka</div>
-                                <div className="text-3xl font-bold font-mono mb-1">{todaySchedule.berbuka}</div>
-                                <div className="text-xs opacity-80 mb-3">{formatCountdown(todaySchedule.berbuka)}</div>
-                                <button onClick={() => { setAlarmType('berbuka'); setAlarmModalOpen(true); }} className="w-full py-2 px-3 text-xs rounded-lg bg-white/25 hover:bg-white/35 transition-all font-medium">🔔 {alarms.berbuka ? `${alarms.berbuka}m sebelum` : 'Atur Alarm'}</button>
+                            <div className="card-highlight rounded-2xl p-4 text-center transform transition hover:-translate-y-1" style={{background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'}}>
+                                <div className="text-xs font-bold text-orange-100 uppercase tracking-widest mb-1">Berbuka</div>
+                                <div className="text-3xl font-bold font-mono text-white mb-1">{todaySchedule.berbuka}</div>
+                                <div className="text-[10px] text-orange-100 bg-white/20 rounded-full px-2 py-0.5 inline-block mb-3">{formatCountdown(todaySchedule.berbuka)}</div>
+                                <button onClick={() => { setAlarmType('berbuka'); setAlarmModalOpen(true); }} className="w-full py-2 px-3 text-xs rounded-lg bg-white/20 hover:bg-white/30 text-white font-bold transition-all flex items-center justify-center gap-1">
+                                    🔔 {alarms.berbuka ? 'Aktif' : 'Alarm'}
+                                </button>
                             </div>
                         </div>
                     </section>
 
-                    <nav className="px-6 flex-shrink-0 mb-2">
-                        <div className="nav-modern flex gap-2 rounded-xl p-1">
-                            {['today', 'calendar', 'calculator', 'stats'].map(tab => (
-                                <button key={tab} onClick={() => setActiveTab(tab)} className={`nav-item-modern flex-1 py-2 px-1 rounded-lg text-xs font-medium text-center transition-all ${activeTab === tab ? 'active font-bold' : 'text-gray-600'}`}>
-                                    {tab === 'today' ? 'Hari Ini' : tab === 'calendar' ? 'Kalender' : tab === 'calculator' ? 'Hitung' : 'Statistik'}
-                                </button>
-                            ))}
-                        </div>
-                    </nav>
-
-                    <main className="flex-1 overflow-y-auto px-6 py-2 no-scrollbar relative z-10">
+                    <main className="flex-1 overflow-y-auto px-4 py-2 no-scrollbar relative z-10 pb-24">
                         {activeTab === 'today' && renderToday()}
                         {activeTab === 'calendar' && renderCalendar()}
                         {activeTab === 'calculator' && renderCalculator()}
                         {activeTab === 'stats' && renderStats()}
                     </main>
 
-                    <Modal isOpen={isPrayerModalOpen} onClose={() => setPrayerModalOpen(false)} title="🤲 Doa-Doa Pilihan" actions={<button onClick={() => setPrayerModalOpen(false)} className="btn-primary w-full py-3 rounded-xl font-semibold">Tutup</button>}>
+                    <nav className="fixed bottom-0 left-0 right-0 nav-modern px-6 py-3 z-50">
+                        <div className="flex justify-between items-center max-w-md mx-auto">
+                            {['today', 'calendar', 'calculator', 'stats'].map(tab => {
+                                const icons = {
+                                    today: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>,
+                                    calendar: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg>,
+                                    calculator: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>,
+                                    stats: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+                                };
+                                return (
+                                    <button 
+                                        key={tab} 
+                                        onClick={() => setActiveTab(tab)} 
+                                        className={`nav-item-modern flex flex-col items-center gap-1 ${activeTab === tab ? 'active' : 'text-gray-400'}`}
+                                    >
+                                        <div className={`icon-container p-2 rounded-xl transition-all ${activeTab === tab ? 'bg-blue-50 text-blue-600 shadow-sm' : ''}`}>
+                                            {icons[tab]}
+                                        </div>
+                                        <span className="text-[10px] font-medium capitalize">{tab === 'today' ? 'Hari Ini' : tab === 'calendar' ? 'Jadwal' : tab === 'calculator' ? 'Hitung' : 'Progres'}</span>
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </nav>
+
+                    <Modal isOpen={isPrayerModalOpen} onClose={() => setPrayerModalOpen(false)} title="🤲 Doa-Doa Pilihan" actions={<button onClick={() => setPrayerModalOpen(false)} className="btn-primary w-full py-3 rounded-xl font-semibold shadow-lg shadow-blue-200">Tutup</button>}>
                         <div className="space-y-6">
                             {prayersData.map((prayer, idx) => (
-                                <div key={idx} className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                                    <h4 className="font-bold text-blue-700 mb-2">{prayer.title}</h4>
-                                    <p className="arabic-font text-2xl text-right leading-loose mb-2 text-gray-800">{prayer.arabic}</p>
-                                    <p className="text-sm text-gray-600 italic mb-1">{prayer.latin}</p>
-                                    <p className="text-xs text-gray-500">"{prayer.translation}"</p>
+                                <div key={idx} className="bg-white p-5 rounded-2xl border border-blue-50 shadow-sm">
+                                    <h4 className="font-bold text-blue-700 mb-3 border-b border-blue-50 pb-2">{prayer.title}</h4>
+                                    <p className="arabic-font text-2xl text-right leading-loose mb-3 text-gray-800">{prayer.arabic}</p>
+                                    <p className="text-sm text-gray-600 italic mb-2 bg-gray-50 p-2 rounded-lg">{prayer.latin}</p>
+                                    <p className="text-xs text-gray-500 leading-relaxed">"{prayer.translation}"</p>
                                 </div>
                             ))}
                         </div>
                     </Modal>
 
-                    <Modal isOpen={isAlarmModalOpen} onClose={() => setAlarmModalOpen(false)} title={`🔔 Pengingat ${alarmType === 'imsak' ? 'Imsak' : 'Berbuka'}`} actions={<><button onClick={() => setAlarmModalOpen(false)} className="flex-1 py-3 rounded-xl border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-50">Batal</button><button onClick={saveAlarm} className="btn-primary flex-1 py-3 rounded-xl font-semibold">Simpan</button></>}>
-                        <div>
-                            <label className="text-sm font-medium text-gray-700 mb-2 block">Ingatkan sebelum:</label>
-                            <select id="alarm-select" className="w-full border-2 border-blue-200 rounded-xl px-4 py-3 text-gray-800 bg-blue-50 focus:outline-none focus:border-blue-500">
-                                <option value="5">5 menit sebelumnya</option>
-                                <option value="10">10 menit sebelumnya</option>
-                                <option value="15">15 menit sebelumnya</option>
-                                <option value="30">30 menit sebelumnya</option>
+                    <Modal isOpen={isAlarmModalOpen} onClose={() => setAlarmModalOpen(false)} title={`🔔 Pengingat ${alarmType === 'imsak' ? 'Imsak' : 'Berbuka'}`} actions={<><button onClick={() => setAlarmModalOpen(false)} className="flex-1 py-3 rounded-xl border border-gray-200 text-gray-600 font-medium hover:bg-gray-50">Batal</button><button onClick={saveAlarm} className="btn-primary flex-1 py-3 rounded-xl font-semibold shadow-lg shadow-blue-200">Simpan</button></>}>
+                        <div className="py-2">
+                            <label className="text-sm font-bold text-gray-700 mb-3 block">Ingatkan saya sebelum waktu tiba:</label>
+                            <div className="grid grid-cols-2 gap-3">
+                                {[5, 10, 15, 30].map(min => (
+                                    <div key={min} className="relative">
+                                        <input type="radio" name="alarm_min" id={`min_${min}`} value={min} className="peer hidden" />
+                                        <label 
+                                            onClick={() => document.getElementById('alarm-select').value = min}
+                                            htmlFor={`min_${min}`} 
+                                            className="block text-center p-3 rounded-xl border-2 border-gray-100 bg-gray-50 cursor-pointer transition-all hover:border-blue-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 font-semibold text-sm"
+                                        >
+                                            {min} Menit
+                                        </label>
+                                    </div>
+                                ))}
+                            </div>
+                            <select id="alarm-select" className="hidden">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
                             </select>
                         </div>
                     </Modal>
 
-                    <Modal isOpen={isNoteModalOpen} onClose={() => setNoteModalOpen(false)} title={`✏️ Catatan ${currentNoteItem?.label}`} actions={<><button onClick={() => setNoteModalOpen(false)} className="flex-1 py-3 rounded-xl border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-50">Batal</button><button onClick={saveNote} className="btn-primary flex-1 py-3 rounded-xl font-semibold">Simpan</button></>}>
-                        <div className="space-y-4">
+                    <Modal isOpen={isNoteModalOpen} onClose={() => setNoteModalOpen(false)} title={`✏️ Catatan ${currentNoteItem?.label}`} actions={<><button onClick={() => setNoteModalOpen(false)} className="flex-1 py-3 rounded-xl border border-gray-200 text-gray-600 font-medium hover:bg-gray-50">Batal</button><button onClick={saveNote} className="btn-primary flex-1 py-3 rounded-xl font-semibold shadow-lg shadow-blue-200">Simpan</button></>}>
+                        <div className="space-y-4 py-2">
                             {currentNoteItem?.id === 'tadarus' ? (
-                                <>
-                                    <div><label className="text-sm font-medium text-gray-700 mb-1 block">Dari Surat:</label><input type="text" placeholder="Contoh: Al-Fatihah" value={noteForm.surahDari} onChange={e => setNoteForm({...noteForm, surahDari: e.target.value})} className="w-full border-2 border-blue-200 rounded-lg px-4 py-2 text-gray-800 focus:outline-none focus:border-blue-500"/></div>
-                                    <div><label className="text-sm font-medium text-gray-700 mb-1 block">Ayat:</label><input type="text" placeholder="Contoh: 1-7" value={noteForm.ayatDari} onChange={e => setNoteForm({...noteForm, ayatDari: e.target.value})} className="w-full border-2 border-blue-200 rounded-lg px-4 py-2 text-gray-800 focus:outline-none focus:border-blue-500"/></div>
-                                    <div className="text-center text-xs text-gray-400 font-bold">SAMPAI</div>
-                                    <div><label className="text-sm font-medium text-gray-700 mb-1 block">Ke Surat:</label><input type="text" placeholder="Contoh: Al-Baqarah" value={noteForm.surahKe} onChange={e => setNoteForm({...noteForm, surahKe: e.target.value})} className="w-full border-2 border-blue-200 rounded-lg px-4 py-2 text-gray-800 focus:outline-none focus:border-blue-500"/></div>
-                                    <div><label className="text-sm font-medium text-gray-700 mb-1 block">Ayat:</label><input type="text" placeholder="Contoh: 10" value={noteForm.ayatKe} onChange={e => setNoteForm({...noteForm, ayatKe: e.target.value})} className="w-full border-2 border-blue-200 rounded-lg px-4 py-2 text-gray-800 focus:outline-none focus:border-blue-500"/></div>
-                                    <a href="https://quran.com" target="_blank" className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 font-medium">🌐 Buka Al-Quran Online ↗️</a>
-                                </>
+                                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                                    <div className="grid grid-cols-[1fr,auto] gap-3 mb-3">
+                                        <div><label className="text-xs font-bold text-gray-500 mb-1 block uppercase">Dari Surat</label><input type="text" placeholder="Al-Fatihah" value={noteForm.surahDari} onChange={e => setNoteForm({...noteForm, surahDari: e.target.value})} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"/></div>
+                                        <div><label className="text-xs font-bold text-gray-500 mb-1 block uppercase">Ayat</label><input type="text" placeholder="1" value={noteForm.ayatDari} onChange={e => setNoteForm({...noteForm, ayatDari: e.target.value})} className="w-20 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-center"/></div>
+                                    </div>
+                                    <div className="flex items-center justify-center my-2 text-gray-300 text-xs font-bold">⬇️ SAMPAI ⬇️</div>
+                                    <div className="grid grid-cols-[1fr,auto] gap-3">
+                                        <div><label className="text-xs font-bold text-gray-500 mb-1 block uppercase">Ke Surat</label><input type="text" placeholder="Al-Baqarah" value={noteForm.surahKe} onChange={e => setNoteForm({...noteForm, surahKe: e.target.value})} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"/></div>
+                                        <div><label className="text-xs font-bold text-gray-500 mb-1 block uppercase">Ayat</label><input type="text" placeholder="10" value={noteForm.ayatKe} onChange={e => setNoteForm({...noteForm, ayatKe: e.target.value})} className="w-20 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-center"/></div>
+                                    </div>
+                                    <a href="https://quran.com" target="_blank" className="mt-4 block w-full text-center py-2 bg-white border border-gray-200 rounded-lg text-xs font-bold text-gray-600 hover:text-blue-600 hover:border-blue-200 transition-all">🌐 Buka Quran Online</a>
+                                </div>
                             ) : (
-                                <div><label className="text-sm font-medium text-gray-700 mb-2 block">Catatan:</label><textarea placeholder="Tulis catatan Anda di sini..." className="w-full border-2 border-blue-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-blue-500 resize-none" rows="4" value={noteForm.text} onChange={e => setNoteForm({...noteForm, text: e.target.value})}></textarea></div>
+                                <div><label className="text-xs font-bold text-gray-500 mb-2 block uppercase">Isi Catatan</label><textarea placeholder="Tulis progres atau catatan ibadah Anda di sini..." className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-800 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50/50 resize-none shadow-sm" rows="5" value={noteForm.text} onChange={e => setNoteForm({...noteForm, text: e.target.value})}></textarea></div>
                             )}
                         </div>
                     </Modal>
