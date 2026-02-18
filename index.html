@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadhan Tracker Tanjung Tabalong</title>
+    <title>Ramadhan Tracker Kopkar AKM</title>
     
     <!-- React & ReactDOM -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -28,6 +28,41 @@
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
+        /* Mosque Silhouette Background at Bottom */
+        .mosque-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230ea5e9' fill-opacity='0.05' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,208C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Lantern Ornament */
+        .lantern {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 60px;
+            height: 100px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='%23fbbf24'%3E%3Cpath d='M12 2C11.4477 2 11 2.44772 11 3V4.17071C8.16519 4.58254 6 7.02538 6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10C18 7.02538 15.8348 4.58254 13 4.17071V3C13 2.44772 12.5523 2 12 2ZM8 10C8 7.79086 9.79086 6 12 6C14.2091 6 16 7.79086 16 10V18C16 18.5523 15.5523 19 15 19H9C8.44772 19 8 18.5523 8 18V10Z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.5));
+            animation: swing 3s infinite ease-in-out alternate;
+            z-index: 30;
+        }
+
+        @keyframes swing {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
         .gradient-bg {
             background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #14b8a6 100%);
         }
@@ -40,19 +75,6 @@
             overflow: hidden;
         }
 
-        /* Ornamen Sudut Kartu */
-        .card-modern::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 80px;
-            height: 80px;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 0v50C72.386 50 50 72.386 50 100H0V0h100z' fill='%230ea5e9' fill-opacity='0.03'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            pointer-events: none;
-        }
-        
         .card-highlight {
             background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
             color: white;
@@ -73,11 +95,6 @@
             background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
             color: white;
             transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(14,165,233,0.3);
         }
         
         .checkbox-modern {
@@ -214,32 +231,50 @@
     </style>
 </head>
 <body class="h-full bg-slate-50 text-gray-800 overflow-hidden islamic-pattern">
-    <div id="root" class="h-full"></div>
+    <!-- Ornamen Background -->
+    <div class="mosque-bg"></div>
+    
+    <div id="root" class="h-full relative z-10"></div>
 
     <script type="text/babel">
         const { useState, useEffect, useRef, useMemo } = React;
 
         // --- Data & Konfigurasi ---
-        const RAMADHAN_START = new Date(2026, 2, 1); // 1 Maret 2026
+        const RAMADHAN_START = new Date(2026, 1, 19); // 19 Februari 2026 (Bulan index 1 = Feb)
         const TOTAL_DAYS = 30;
 
-        // Jadwal Tanjung Tabalong (Hardcoded sesuai referensi)
+        // Jadwal Tanjung Tabalong (Updated to match Image: 19 Feb Start)
         const tabalong_schedule = [
-            { imsak: "04:25", berbuka: "18:10" }, { imsak: "04:24", berbuka: "18:11" },
-            { imsak: "04:23", berbuka: "18:12" }, { imsak: "04:22", berbuka: "18:13" },
-            { imsak: "04:21", berbuka: "18:14" }, { imsak: "04:20", berbuka: "18:15" },
-            { imsak: "04:19", berbuka: "18:16" }, { imsak: "04:18", berbuka: "18:17" },
-            { imsak: "04:17", berbuka: "18:18" }, { imsak: "04:16", berbuka: "18:19" },
-            { imsak: "04:15", berbuka: "18:20" }, { imsak: "04:14", berbuka: "18:21" },
-            { imsak: "04:13", berbuka: "18:22" }, { imsak: "04:12", berbuka: "18:23" },
-            { imsak: "04:11", berbuka: "18:24" }, { imsak: "04:10", berbuka: "18:25" },
-            { imsak: "04:09", berbuka: "18:26" }, { imsak: "04:08", berbuka: "18:27" },
-            { imsak: "04:07", berbuka: "18:28" }, { imsak: "04:06", berbuka: "18:29" },
-            { imsak: "04:05", berbuka: "18:30" }, { imsak: "04:04", berbuka: "18:31" },
-            { imsak: "04:03", berbuka: "18:32" }, { imsak: "04:02", berbuka: "18:33" },
-            { imsak: "04:01", berbuka: "18:34" }, { imsak: "04:00", berbuka: "18:35" },
-            { imsak: "03:59", berbuka: "18:36" }, { imsak: "03:58", berbuka: "18:37" },
-            { imsak: "03:57", berbuka: "18:38" }, { imsak: "03:56", berbuka: "18:39" }
+            { imsak: "05:01", berbuka: "18:40" }, // 19 Feb
+            { imsak: "05:01", berbuka: "18:40" }, // 20 Feb
+            { imsak: "05:01", berbuka: "18:40" }, // 21 Feb
+            { imsak: "05:01", berbuka: "18:40" }, // 22 Feb
+            { imsak: "05:01", berbuka: "18:40" }, // 23 Feb
+            { imsak: "05:01", berbuka: "18:39" }, // 24 Feb
+            { imsak: "05:01", berbuka: "18:39" }, // 25 Feb
+            { imsak: "05:01", berbuka: "18:39" }, // 26 Feb
+            { imsak: "05:01", berbuka: "18:39" }, // 27 Feb
+            { imsak: "05:01", berbuka: "18:38" }, // 28 Feb
+            { imsak: "05:01", berbuka: "18:38" }, // 01 Mar
+            { imsak: "05:01", berbuka: "18:38" }, // 02 Mar
+            { imsak: "05:01", berbuka: "18:38" }, // 03 Mar
+            { imsak: "05:01", berbuka: "18:37" }, // 04 Mar
+            { imsak: "05:01", berbuka: "18:37" }, // 05 Mar
+            { imsak: "05:01", berbuka: "18:37" }, // 06 Mar
+            { imsak: "05:01", berbuka: "18:37" }, // 07 Mar
+            { imsak: "05:00", berbuka: "18:36" }, // 08 Mar
+            { imsak: "05:00", berbuka: "18:36" }, // 09 Mar
+            { imsak: "05:00", berbuka: "18:36" }, // 10 Mar
+            { imsak: "05:00", berbuka: "18:35" }, // 11 Mar
+            { imsak: "05:00", berbuka: "18:35" }, // 12 Mar
+            { imsak: "05:00", berbuka: "18:35" }, // 13 Mar
+            { imsak: "04:59", berbuka: "18:34" }, // 14 Mar
+            { imsak: "04:59", berbuka: "18:34" }, // 15 Mar
+            { imsak: "04:59", berbuka: "18:34" }, // 16 Mar
+            { imsak: "04:59", berbuka: "18:33" }, // 17 Mar
+            { imsak: "04:59", berbuka: "18:33" }, // 18 Mar
+            { imsak: "04:58", berbuka: "18:33" }, // 19 Mar
+            { imsak: "04:58", berbuka: "18:33" }  // 20 Mar
         ];
 
         const checklistConfig = [
@@ -298,17 +333,23 @@
         };
 
         const formatCountdown = (targetTime) => {
-            if (!targetTime) return "--:--";
+            if (!targetTime) return "--:--:--";
             const now = new Date();
             const [hours, minutes] = targetTime.split(':').map(Number);
             const target = new Date(now);
             target.setHours(hours, minutes, 0, 0);
             if (target < now) target.setDate(target.getDate() + 1);
+            
             const diff = target - now;
+            if (diff < 0) return "00:00:00";
+
             const h = Math.floor(diff / (1000 * 60 * 60));
             const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            if (h > 0) return `${h}j ${m}m lagi`;
-            return `${m} menit lagi`;
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // Format HH:MM:SS
+            const pad = (n) => n.toString().padStart(2, '0');
+            return `${pad(h)}:${pad(m)}:${pad(s)}`;
         };
 
         const formatRupiah = (number) => {
@@ -752,6 +793,8 @@
                 <div className="h-full flex flex-col overflow-hidden bg-slate-50 islamic-pattern font-sans">
                     {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
 
+                    <div className="lantern"></div>
+
                     <header className="relative z-10 px-4 pt-3 pb-4 flex-shrink-0 bg-gradient-to-br from-blue-600 to-teal-600 text-white rounded-b-2xl shadow-lg overflow-hidden transition-all duration-300">
                         <div className="header-curve"><svg viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path></svg></div>
                         <div className="text-center relative z-20">
@@ -762,7 +805,7 @@
                             </div>
                             
                             <div className="arabic-font text-lg text-blue-50 mb-0.5 drop-shadow-md">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-                            <h1 className="text-xl font-extrabold text-white mb-0.5 tracking-tight drop-shadow-sm">Ramadhan Tracker</h1>
+                            <h1 className="text-xl font-extrabold text-white mb-0.5 tracking-tight drop-shadow-sm">Ramadhan Tracker Kopkar AKM</h1>
                             
                             <div className="flex items-center justify-center gap-2 mb-2">
                                 <p className="text-blue-100 text-[10px] font-medium">Selamat Berpuasa</p>
@@ -783,7 +826,7 @@
                             <div className="card-highlight rounded-2xl p-3 text-center transform transition hover:-translate-y-1">
                                 <div className="text-[10px] font-bold text-blue-100 uppercase tracking-widest mb-0.5">Imsak</div>
                                 <div className="text-2xl font-bold font-mono text-white mb-0.5">{todaySchedule.imsak}</div>
-                                <div className="text-[10px] text-blue-100 bg-white/20 rounded-full px-2 py-0.5 inline-block mb-2">{formatCountdown(todaySchedule.imsak)}</div>
+                                <div className="text-[10px] text-blue-100 bg-white/20 rounded-full px-2 py-0.5 inline-block mb-2 font-mono tracking-wide">{formatCountdown(todaySchedule.imsak)}</div>
                                 <button onClick={() => { setAlarmType('imsak'); setAlarmModalOpen(true); }} className="w-full py-1.5 px-2 text-[10px] rounded-lg bg-white/20 hover:bg-white/30 text-white font-bold transition-all flex items-center justify-center gap-1">
                                     🔔 {alarms.imsak ? 'Aktif' : 'Alarm'}
                                 </button>
@@ -791,7 +834,7 @@
                             <div className="card-highlight rounded-2xl p-3 text-center transform transition hover:-translate-y-1" style={{background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'}}>
                                 <div className="text-[10px] font-bold text-orange-100 uppercase tracking-widest mb-0.5">Berbuka</div>
                                 <div className="text-2xl font-bold font-mono text-white mb-0.5">{todaySchedule.berbuka}</div>
-                                <div className="text-[10px] text-orange-100 bg-white/20 rounded-full px-2 py-0.5 inline-block mb-2">{formatCountdown(todaySchedule.berbuka)}</div>
+                                <div className="text-[10px] text-orange-100 bg-white/20 rounded-full px-2 py-0.5 inline-block mb-2 font-mono tracking-wide">{formatCountdown(todaySchedule.berbuka)}</div>
                                 <button onClick={() => { setAlarmType('berbuka'); setAlarmModalOpen(true); }} className="w-full py-1.5 px-2 text-[10px] rounded-lg bg-white/20 hover:bg-white/30 text-white font-bold transition-all flex items-center justify-center gap-1">
                                     🔔 {alarms.berbuka ? 'Aktif' : 'Alarm'}
                                 </button>
